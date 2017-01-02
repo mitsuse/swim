@@ -2,12 +2,12 @@ import Foundation
 import Commandant
 import Result
 
-public let usageErrorCode: Int32 = 64
+let usageErrorCode: Int32 = 64
 
-public enum CommandError: Error {
+enum CommandError: Error {
     case unavailableSource(InputSource.Id)
 
-    public var code: Int32 {
+    var code: Int32 {
         switch self {
         case .unavailableSource: return 65
         }
@@ -15,7 +15,7 @@ public enum CommandError: Error {
 }
 
 extension CommandError: CustomStringConvertible {
-    public var description: String {
+    var description: String {
         switch self {
         case let .unavailableSource(identifier):
             return "unavalable input source: \(identifier.value)"
