@@ -34,7 +34,7 @@ com.apple.inputmethod.Kotoeri
 ```
 
 If `--name` option is enabled,
-the command presents the name with the identifier of input sources
+the command presents the name and the identifier of input sources
 with format like `name (identifier)`:
 
 ```
