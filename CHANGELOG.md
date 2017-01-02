@@ -1,3 +1,8 @@
+## 0.2.0
+
+- Add `--name` option for `list` command to present the name of input source.
+
+
 ## 0.1.0
 
 - Implement basic features:
