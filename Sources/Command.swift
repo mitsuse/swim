@@ -46,7 +46,11 @@ struct ListCommand: CommandProtocol {
     func run(_ options: Options) -> Result<(), CommandError> {
         let sources = options.current ? [InputSource.current] : InputSource.available
         sources.forEach { source in
-            print(source.identifier.value)
+            if options.presentWithName {
+                print("\(source.name.value) (\(source.identifier.value))")
+            } else {
+                print(source.identifier.value)
+            }
         }
         return .success(())
     }
@@ -54,6 +58,7 @@ struct ListCommand: CommandProtocol {
 
 struct ListOptions: OptionsProtocol {
     let current: Bool
+    let presentWithName: Bool
 
     static func evaluate(
         _ m: CommandMode
@@ -64,10 +69,17 @@ struct ListOptions: OptionsProtocol {
                 defaultValue: false,
                 usage: "if it is true, the identifier of the current input source is presented"
             )
+            <*> m <| Option(
+                key: "name",
+                defaultValue: false,
+                usage: "if it is true, the name and the identifier is presented"
+            )
     }
 
-    private static func create(_ current: Bool) -> ListOptions {
-        return ListOptions(current: current)
+    private static func create(_ current: Bool) -> (Bool) -> ListOptions {
+        return { (name: Bool) in
+            ListOptions(current: current, presentWithName: name)
+        }
     }
 }
 

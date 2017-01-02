@@ -1,7 +1,16 @@
 public struct InputSource: Entity {
     public let identifier: Id
+    public let name: Name
 
     public struct Id: Identifier, WrappedValue {
+        public let value: String
+
+        init(_ value: String) {
+            self.value = value
+        }
+    }
+
+    public struct Name: WrappedValue {
         public let value: String
 
         init(_ value: String) {
@@ -21,15 +30,19 @@ extension InputSource {
         return Set(
             list.map { source in
                 InputSource(
-                    identifier: InputSource.Id(extractRawIdentifier(of: source))
+                    identifier: InputSource.Id(extractRawIdentifier(of: source)),
+                    name: InputSource.Name(extractName(of: source))
                 )
             }
         )
     }
 
     public static var current: InputSource {
+        let rawInputSource = currentRawInputSource
+
         return InputSource(
-            identifier: InputSource.Id(extractRawIdentifier(of: currentRawInputSource))
+            identifier: InputSource.Id(extractRawIdentifier(of: rawInputSource)),
+            name: InputSource.Name(extractName(of: rawInputSource))
         )
     }
 }

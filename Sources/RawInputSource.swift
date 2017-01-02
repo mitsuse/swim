@@ -23,6 +23,13 @@ func extractRawIdentifier(of rawInputSource: TISInputSource) -> String {
         as String
 }
 
+func extractName(of rawInputSource: TISInputSource) -> String {
+    return Unmanaged<NSString>
+        .fromOpaque(TISGetInputSourceProperty(rawInputSource, kTISPropertyLocalizedName))
+        .takeUnretainedValue()
+        as String
+}
+
 func extractCategory(of rawInputSource: TISInputSource) -> String {
     return Unmanaged<NSString>
         .fromOpaque(TISGetInputSourceProperty(rawInputSource, kTISPropertyInputSourceCategory))

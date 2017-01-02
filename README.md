@@ -25,6 +25,23 @@ cp .build/release/swim ${YOUR_EXECUTABLE_PATH}
 
 This sub-command lists identifiers of available input sources on the standard output.
 Identifiers are separated by new line.
+
+For example, `swim list` presents the following output:
+
+```
+com.apple.keyboardlayout.all
+com.apple.inputmethod.Kotoeri
+```
+
+If `--name` option is enabled,
+the command presents the name with the identifier of input sources
+with format like `name (identifier)`:
+
+```
+ABC - Extended (com.apple.keyboardlayout.all)
+Hiragana (com.apple.inputmethod.Kotoeri)
+```
+
 You can filter them to present the current input source with `--current` option.
 
 
