@@ -8,7 +8,7 @@ Switch the current input method by identifier.
 
 ## Installation
 
-Prebuild binary is not provided. Please build from source:
+Prebuilt binary is not provided. Please build from source:
 
 ```
 git clone -b 0.1.0 https://github.com/mitsuse/swim.git && cd swim
