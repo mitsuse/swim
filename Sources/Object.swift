@@ -1,4 +1,4 @@
-public typealias Value = Equatable
+public typealias Value = Hashable
 
 public protocol WrappedValue: Value {
     associatedtype RawValue: Value
@@ -6,7 +6,7 @@ public protocol WrappedValue: Value {
     var value: RawValue { get }
 }
 
-extension WrappedValue where Self: Hashable, Self.RawValue: Hashable {
+extension WrappedValue {
     public var hashValue: Int {
         return value.hashValue
     }
@@ -16,7 +16,7 @@ public func == <V: WrappedValue>(x: V, y: V) -> Bool {
     return x.value == y.value
 }
 
-public protocol Identifier: Value, Hashable {
+public protocol Identifier: Value {
 }
 
 public protocol Entity: Hashable {
