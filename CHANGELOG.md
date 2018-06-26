@@ -1,5 +1,8 @@
 ## Unreleased
 
+
+## 0.3.0
+
 - Fix extracting the ID of input source.
     - Use `kTISPropertyInputSourceID` intead of `kTISPropertyBundleID`.
 
