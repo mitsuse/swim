@@ -18,7 +18,7 @@ var currentRawInputSource: TISInputSource {
 
 func extractRawIdentifier(of rawInputSource: TISInputSource) -> String {
     return Unmanaged<NSString>
-        .fromOpaque(TISGetInputSourceProperty(rawInputSource, kTISPropertyBundleID))
+        .fromOpaque(TISGetInputSourceProperty(rawInputSource, kTISPropertyInputSourceID))
         .takeUnretainedValue()
         as String
 }
