@@ -1,3 +1,9 @@
+## Unreleased
+
+- Fix extracting the ID of input source.
+    - Use `kTISPropertyInputSourceID` intead of `kTISPropertyBundleID`.
+
+
 ## 0.2.0
 
 - Add `--name` option for `list` command to present the name of input source.
