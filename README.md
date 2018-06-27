@@ -11,7 +11,7 @@ Switch the current input method by identifier.
 Prebuilt binary is not provided. Please build from source:
 
 ```
-git clone -b 0.2.0 https://github.com/mitsuse/swim.git && cd swim
+git clone -b 0.3.1 https://github.com/mitsuse/swim.git && cd swim
 swift build -c release
 cp .build/release/swim ${YOUR_EXECUTABLE_PATH}
 ```
@@ -29,8 +29,8 @@ Identifiers are separated by new line.
 For example, `swim list` presents the following output:
 
 ```
-com.apple.keyboardlayout.all
-com.apple.inputmethod.Kotoeri
+com.apple.keyboardlayout.ABC
+com.apple.inputmethod.Kotoeri.Japanese
 ```
 
 If `--name` option is enabled,
@@ -38,8 +38,8 @@ the command presents the name and the identifier of input sources
 with format like `name (identifier)`:
 
 ```
-ABC - Extended (com.apple.keyboardlayout.all)
-Hiragana (com.apple.inputmethod.Kotoeri)
+ABC (com.apple.keyboardlayout.ABC)
+Hiragana (com.apple.inputmethod.Kotoeri.Japanese)
 ```
 
 You can filter them to present the current input source with `--current` option.
@@ -48,7 +48,7 @@ You can filter them to present the current input source with `--current` option.
 ### `use`
 
 This sub-comman switch to the input method specified with the given identifier.
-For example, `swim use com.apple.inputmethod.Kotoeri` switches the current input source to
+For example, `swim use com.apple.inputmethod.Kotoeri.Japanese` switches the current input source to
 Japanese.
 If the given identifier is invalid or unavailable,
 the command exits with `unavailableSource` (exit code: 65).
