@@ -2,7 +2,7 @@ public struct InputSource: Entity {
     public let identifier: Id
     public let name: Name
 
-    public struct Id: Identifier, WrappedValue {
+    public struct Id: Identifier {
         public let value: String
 
         init(_ value: String) {
@@ -10,7 +10,7 @@ public struct InputSource: Entity {
         }
     }
 
-    public struct Name: WrappedValue {
+    public struct Name: Value {
         public let value: String
 
         init(_ value: String) {

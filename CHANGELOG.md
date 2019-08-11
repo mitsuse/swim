@@ -1,5 +1,7 @@
 ## Unreleased
 
+- Translate into Swift 5.
+
 
 ## 0.3.0
 
