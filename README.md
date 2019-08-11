@@ -11,7 +11,7 @@ Switch the current input method by identifier.
 Prebuilt binary is not provided. Please build from source:
 
 ```
-git clone -b 0.3.1 https://github.com/mitsuse/swim.git && cd swim
+git clone -b 0.4.0 https://github.com/mitsuse/swim.git && cd swim
 swift build -c release
 cp .build/release/swim ${YOUR_EXECUTABLE_PATH}
 ```
