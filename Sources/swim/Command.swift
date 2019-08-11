@@ -1,6 +1,5 @@
 import Foundation
 import Commandant
-import Result
 
 let usageErrorCode: Int32 = 64
 

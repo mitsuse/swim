@@ -1,6 +1,5 @@
 import Darwin
 import Commandant
-import Result
 
 extension CommandRegistry {
     public func run(arguments: [String]) -> Result<(), CommandantError<ClientError>> {
